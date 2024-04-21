@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1>Full Menu</h1>
+  <a href="/menu/mains"><h2>Mains</h2></a>
+  <% menu.forEach(function(item) { %>
+    <% if (item.category === 'Mains') { %>
+      <h3><%= item.name %></h3>
+      <p>Price: <%= item.price %></p>
+      <p>Rating: <%= item.rating %></p>
+      <p>Details: <%= item.details %></p>
+    <% } %>
+  <% }); %>
+
+  <a href="/menu/desserts"><h2>Desserts</h2></a>
+  <% menu.forEach(function(item) { %>
+    <% if (item.category === 'Desserts') { %>
+      <h3><%= item.name %></h3>
+      <p>Price: <%= item.price %></p>
+      <p>Rating: <%= item.rating %></p>
+      <p>Details: <%= item.details %></p>
+    <% } %>
+  <% }); %>
+
+  <a href="/menu/sides"><h2>Sides</h2></a>
+  <% menu.forEach(function(item) { %>
+    <% if (item.category === 'Sides') { %>
+      <h3><%= item.name %></h3>
+      <p>Price: <%= item.price %></p>
+      <p>Rating: <%= item.rating %></p>
+      <p>Details: <%= item.details %></p>
+    <% } %>
+  <% }); %>
+</body>
+</html>
